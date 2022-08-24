@@ -2,6 +2,17 @@
   
     
         "post0": {
+            "title": "Primitives Hacks",
+            "content": "// lower case is primitive, upper case is wrapper class public class FinalGradeCalculator { public static void main(String[] args) { int anInt = 100; double aDouble = 89.9; boolean aBoolean = true; // wrapper classes are more like OBJECTS; you can run methods on a wrapper class (ie. length of string) // everything in java is object; obejcts have functionality like getters, setters, methods, etc // not primitives but essential; capital data types are not primitive String aString = &quot;Hello, World!&quot;; // wrapper class shortcut assignment String aStringFormal = new String(&quot;Greetings, World!&quot;); System.out.println(&quot;anInt: &quot; + anInt); System.out.println(&quot;aDouble: &quot; + aDouble); System.out.println(&quot;aBoolean: &quot; + aBoolean); System.out.println(&quot;aString: &quot; + aString); System.out.println(&quot;aStringFormal: &quot; + aStringFormal); } } DefinePrimitives.main(null) . anInt: 100 aDouble: 89.9 aBoolean: true aString: Hello, World! aStringFormal: Greetings, World! .",
+            "url": "https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/23/primitives.html",
+            "relUrl": "/jupyter/2022/08/23/primitives.html",
+            "date": " • Aug 23, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "Python Notebook",
             "content": "Code . print(&#39;Hello world!&#39;) . Hello world! .",
             "url": "https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/21/python-notebook.html",
@@ -12,7 +23,7 @@
     
   
     
-        ,"post1": {
+        ,"post2": {
             "title": "Java Notebook",
             "content": "Code . System.out.println(&quot;Hello world!&quot;) . Hello world! .",
             "url": "https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/21/java-notebook.html",
@@ -23,7 +34,7 @@
     
   
     
-        ,"post2": {
+        ,"post3": {
             "title": "First Post",
             "content": "“Wow, markdown is pretty cool.” ~ someone . Markdown Usage . This | is | a | list | . I promise I know how to format text. .",
             "url": "https://mnarayan1.github.io/csa-fastpages/markdown/2022/08/20/first-page.html",
@@ -51,6 +62,22 @@
   
 
   
+      ,"page3": {
+          "title": "Notes",
+          "content": "Notes . Primitives Lesson . . Primitives: Basic data types, don’t store any information beyond the data itself (ie. int, char, float, double) | Wrapper Classes: More complex, similar to objects. Can run methods on wrapper classes (ie. String) | .",
+          "url": "https://mnarayan1.github.io/csa-fastpages/_pages/notes.html",
+          "relUrl": "/_pages/notes.html",
+          "date": ""
+      }
+      
+  
+
+  
+  
+
+  
+
+  
   
 
   
@@ -59,18 +86,13 @@
   
 
   
-
-  
   
 
   
   
 
   
-  
-
-  
-      ,"page10": {
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://mnarayan1.github.io/csa-fastpages/robots.txt",
