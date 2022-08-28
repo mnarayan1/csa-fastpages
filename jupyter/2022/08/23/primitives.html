@@ -132,6 +132,13 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Statistics-Calculator">Statistics Calculator<a class="anchor-link" href="#Statistics-Calculator"> </a></h1><p>Calculates minimum, maximum, mean, and standard deviation from user-inputted data.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -139,28 +146,85 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">// lower case is primitive, upper case is wrapper class</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FinalGradeCalculator</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kt">int</span> <span class="n">anInt</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-      <span class="kt">double</span> <span class="n">aDouble</span> <span class="o">=</span> <span class="mf">89.9</span><span class="p">;</span>
-      <span class="kt">boolean</span> <span class="n">aBoolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.Math</span><span class="p">;</span>
 
-
-      <span class="c1">// wrapper classes are more like OBJECTS; you can run methods on a wrapper class (ie. length of string)</span>
-      <span class="c1">// everything in java is object; obejcts have functionality like getters, setters, methods, etc</span>
-      <span class="c1">// not primitives but essential; capital data types are not primitive</span>
-      <span class="n">String</span> <span class="n">aString</span> <span class="o">=</span> <span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>   <span class="c1">// wrapper class shortcut assignment</span>
-      <span class="n">String</span> <span class="n">aStringFormal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;Greetings, World!&quot;</span><span class="p">);</span>
-  
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;anInt: &quot;</span> <span class="o">+</span> <span class="n">anInt</span><span class="p">);</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;aDouble: &quot;</span> <span class="o">+</span> <span class="n">aDouble</span><span class="p">);</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;aBoolean: &quot;</span> <span class="o">+</span> <span class="n">aBoolean</span><span class="p">);</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;aString: &quot;</span> <span class="o">+</span> <span class="n">aString</span><span class="p">);</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;aStringFormal: &quot;</span> <span class="o">+</span> <span class="n">aStringFormal</span><span class="p">);</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">StatsCalculator</span> <span class="p">{</span>
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">StatsCalculator</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">data</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">enterData</span><span class="p">();</span>
     <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="n">DefinePrimitives</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">enterData</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter an numerical datapoint, type a non-numerical value to exit: \n&quot;</span><span class="p">);</span>
+        <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="kt">double</span> <span class="n">sampleInput</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sampleInput</span><span class="p">);</span>
+                <span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">sampleInput</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">input</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">findMax</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">num</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">max</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">max</span><span class="p">;</span>
+    <span class="p">}</span> 
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">findMin</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">min</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">num</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="n">min</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">min</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">min</span><span class="p">;</span>
+    <span class="p">}</span> 
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">findAverage</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+        <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">num</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">num</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">total</span><span class="o">/</span><span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">.</span><span class="na">size</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">findStandardDeviation</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+        <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">num</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">num</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">double</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">sum</span><span class="o">/</span><span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">.</span><span class="na">size</span><span class="p">();</span>
+
+        <span class="kt">double</span> <span class="n">standardDeviation</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">num</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">standardDeviation</span> <span class="o">+=</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="n">mean</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">standardDeviation</span><span class="o">/</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">StatsCalculator</span> <span class="n">newData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StatsCalculator</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;data: &quot;</span> <span class="o">+</span> <span class="n">newData</span><span class="p">.</span><span class="na">data</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;maximum: &quot;</span> <span class="o">+</span> <span class="n">newData</span><span class="p">.</span><span class="na">findMax</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;minimum: &quot;</span> <span class="o">+</span> <span class="n">newData</span><span class="p">.</span><span class="na">findMin</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;mean: &quot;</span> <span class="o">+</span> <span class="n">newData</span><span class="p">.</span><span class="na">findAverage</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;standard deviation: &quot;</span> <span class="o">+</span> <span class="n">newData</span><span class="p">.</span><span class="na">findStandardDeviation</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// IJava activation</span>
+<span class="n">StatsCalculator</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -173,11 +237,16 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>anInt: 100
-aDouble: 89.9
-aBoolean: true
-aString: Hello, World!
-aStringFormal: Greetings, World!
+<pre>Enter an numerical datapoint, type a non-numerical value to exit: 
+1.0
+5.0
+9.0
+12.0
+data: [1.0, 5.0, 9.0, 12.0]
+maximum: 12.0
+minimum: 0.0
+mean: 6.75
+standard deviation: 4.7871355387816905
 </pre>
 </div>
 </div>

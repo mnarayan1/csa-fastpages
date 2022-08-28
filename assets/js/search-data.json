@@ -2,8 +2,19 @@
   
     
         "post0": {
+            "title": "Bash and Installation Checks",
+            "content": "Bash basics . pwd ## chose directory to work in cd vscode ## list contents of directory ls -al ## show contents of file cat README.md . Python . python --version python2 --version . Python 3.9.12 Python 2.7.18 . Conda Check . test=$(conda list | grep -c &quot;jupyter&quot;) if [ $test -gt 0 ]; then echo &quot;conda and jupyter installed correctly&quot; else echo &quot;conda and jupyter not installed correctly&quot; fi . conda and jupyter installed correctly . Jupyter Check . jupyter --version jupyter kernelspec list . Selected Jupyter core packages... IPython : 8.2.0 ipykernel : 6.9.1 ipywidgets : 7.6.5 jupyter_client : 6.1.12 jupyter_core : 4.9.2 jupyter_server : 1.13.5 jupyterlab : 3.3.2 nbclient : 0.5.13 nbconvert : 6.4.4 nbformat : 5.3.0 notebook : 6.4.8 qtconsole : 5.3.0 traitlets : 5.1.1 Available kernels: bash /home/mnarayan1/.local/share/jupyter/kernels/bash java /home/mnarayan1/.local/share/jupyter/kernels/java javascript /home/mnarayan1/.local/share/jupyter/kernels/javascript python3 /home/mnarayan1/.local/share/jupyter/kernels/python3 . Java . java --version javac --version . openjdk 11.0.16 2022-07-19 OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu120.04) OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu120.04, mixed mode, sharing) javac 11.0.16 . JavaScript . npm -version . 3.10.10 .",
+            "url": "https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/25/installation-check.html",
+            "relUrl": "/jupyter/2022/08/25/installation-check.html",
+            "date": " • Aug 25, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "Primitives Hacks",
-            "content": "// lower case is primitive, upper case is wrapper class public class FinalGradeCalculator { public static void main(String[] args) { int anInt = 100; double aDouble = 89.9; boolean aBoolean = true; // wrapper classes are more like OBJECTS; you can run methods on a wrapper class (ie. length of string) // everything in java is object; obejcts have functionality like getters, setters, methods, etc // not primitives but essential; capital data types are not primitive String aString = &quot;Hello, World!&quot;; // wrapper class shortcut assignment String aStringFormal = new String(&quot;Greetings, World!&quot;); System.out.println(&quot;anInt: &quot; + anInt); System.out.println(&quot;aDouble: &quot; + aDouble); System.out.println(&quot;aBoolean: &quot; + aBoolean); System.out.println(&quot;aString: &quot; + aString); System.out.println(&quot;aStringFormal: &quot; + aStringFormal); } } DefinePrimitives.main(null) . anInt: 100 aDouble: 89.9 aBoolean: true aString: Hello, World! aStringFormal: Greetings, World! .",
+            "content": "Statistics Calculator . Calculates minimum, maximum, mean, and standard deviation from user-inputted data. . import java.util.Scanner; import java.lang.Math; public class StatsCalculator { ArrayList&lt;Double&gt; data; public StatsCalculator() { this.data = new ArrayList&lt;&gt;(); this.enterData(); } private void enterData() { Scanner input = new Scanner(System.in); System.out.print(&quot;Enter an numerical datapoint, type a non-numerical value to exit: n&quot;); while(true) { try { double sampleInput = input.nextDouble(); System.out.println(sampleInput); this.data.add(sampleInput); } catch (Exception e) { input.close(); break; } } } public double findMax() { double max = 0; for (double num : this.data) { if (num &gt; max) { max = num; } } return max; } public double findMin() { double min = 0; for (double num : this.data) { if (num &lt; min) { min = num; } } return min; } public double findAverage() { double total = 0; for (double num : this.data) { total += num; } return total/this.data.size(); } public double findStandardDeviation() { double sum = 0; for (double num : this.data) { sum += num; } double mean = sum/this.data.size(); double standardDeviation = 0; for (double num : this.data) { standardDeviation += Math.pow(num - mean, 2); } return Math.sqrt(standardDeviation/(this.data.size() - 1)); } public static void main(String[] args) { StatsCalculator newData = new StatsCalculator(); System.out.println(&quot;data: &quot; + newData.data); System.out.println(&quot;maximum: &quot; + newData.findMax()); System.out.println(&quot;minimum: &quot; + newData.findMin()); System.out.println(&quot;mean: &quot; + newData.findAverage()); System.out.println(&quot;standard deviation: &quot; + newData.findStandardDeviation()); } } // IJava activation StatsCalculator.main(null); . Enter an numerical datapoint, type a non-numerical value to exit: 1.0 5.0 9.0 12.0 data: [1.0, 5.0, 9.0, 12.0] maximum: 12.0 minimum: 0.0 mean: 6.75 standard deviation: 4.7871355387816905 .",
             "url": "https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/23/primitives.html",
             "relUrl": "/jupyter/2022/08/23/primitives.html",
             "date": " • Aug 23, 2022"
@@ -12,7 +23,7 @@
     
   
     
-        ,"post1": {
+        ,"post2": {
             "title": "Python Notebook",
             "content": "Code . print(&#39;Hello world!&#39;) . Hello world! .",
             "url": "https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/21/python-notebook.html",
@@ -23,7 +34,7 @@
     
   
     
-        ,"post2": {
+        ,"post3": {
             "title": "Java Notebook",
             "content": "Code . System.out.println(&quot;Hello world!&quot;) . Hello world! .",
             "url": "https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/21/java-notebook.html",
@@ -34,7 +45,7 @@
     
   
     
-        ,"post3": {
+        ,"post4": {
             "title": "First Post",
             "content": "“Wow, markdown is pretty cool.” ~ someone . Markdown Usage . This | is | a | list | . I promise I know how to format text. .",
             "url": "https://mnarayan1.github.io/csa-fastpages/markdown/2022/08/20/first-page.html",
