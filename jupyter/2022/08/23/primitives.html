@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Primitives Hacks" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A Jupyter Notebook using primitives." />
-<meta property="og:description" content="A Jupyter Notebook using primitives." />
+<meta name="description" content="Demonstrates learning on primitives." />
+<meta property="og:description" content="Demonstrates learning on primitives." />
 <link rel="canonical" href="https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/23/primitives.html" />
 <meta property="og:url" content="https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/23/primitives.html" />
 <meta property="og:site_name" content="fastpages" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Primitives Hacks" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-23T00:00:00-05:00","datePublished":"2022-08-23T00:00:00-05:00","description":"A Jupyter Notebook using primitives.","headline":"Primitives Hacks","mainEntityOfPage":{"@type":"WebPage","@id":"https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/23/primitives.html"},"url":"https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/23/primitives.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-23T00:00:00-05:00","datePublished":"2022-08-23T00:00:00-05:00","description":"Demonstrates learning on primitives.","headline":"Primitives Hacks","mainEntityOfPage":{"@type":"WebPage","@id":"https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/23/primitives.html"},"url":"https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/23/primitives.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/csa-fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://mnarayan1.github.io/csa-fastpages/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/csa-fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,7 +73,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Primitives Hacks</h1><p class="page-description">A Jupyter Notebook using primitives.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-23T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Primitives Hacks</h1><p class="page-description">Demonstrates learning on primitives.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-23T00:00:00-05:00" itemprop="datePublished">
         Aug 23, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -135,6 +135,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Statistics-Calculator">Statistics Calculator<a class="anchor-link" href="#Statistics-Calculator"> </a></h1><p>Calculates minimum, maximum, mean, and standard deviation from user-inputted data.</p>
+<p>Demonstrates key learning on <a href="/csa-fastpages/_pages/notes.md"> Primitives </a>.</p>
 
 </div>
 </div>
@@ -172,7 +173,7 @@ window.onload = wrap_img;
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="kt">double</span> <span class="nf">findMax</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kt">double</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">max</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">num</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">max</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
@@ -182,7 +183,7 @@ window.onload = wrap_img;
     <span class="p">}</span> 
 
     <span class="kd">public</span> <span class="kt">double</span> <span class="nf">findMin</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kt">double</span> <span class="n">min</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">min</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">num</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="na">data</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="n">min</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">min</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
@@ -215,6 +216,7 @@ window.onload = wrap_img;
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">StatsCalculator</span> <span class="n">newData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StatsCalculator</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\n----- summary -----&quot;</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;data: &quot;</span> <span class="o">+</span> <span class="n">newData</span><span class="p">.</span><span class="na">data</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;maximum: &quot;</span> <span class="o">+</span> <span class="n">newData</span><span class="p">.</span><span class="na">findMax</span><span class="p">());</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;minimum: &quot;</span> <span class="o">+</span> <span class="n">newData</span><span class="p">.</span><span class="na">findMin</span><span class="p">());</span>
@@ -223,7 +225,6 @@ window.onload = wrap_img;
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="c1">// IJava activation</span>
 <span class="n">StatsCalculator</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
@@ -239,14 +240,16 @@ window.onload = wrap_img;
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Enter an numerical datapoint, type a non-numerical value to exit: 
 1.0
-5.0
-9.0
-12.0
-data: [1.0, 5.0, 9.0, 12.0]
-maximum: 12.0
-minimum: 0.0
-mean: 6.75
-standard deviation: 4.7871355387816905
+4.0
+7.0
+8.0
+
+----- summary -----
+data: [1.0, 4.0, 7.0, 8.0]
+maximum: 8.0
+minimum: 1.0
+mean: 5.0
+standard deviation: 3.1622776601683795
 </pre>
 </div>
 </div>
