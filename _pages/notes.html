@@ -119,18 +119,19 @@ window.onload = wrap_img;
 <h2 id="objects">
 <a class="anchor" href="#objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Objects</h2>
 <ul>
-  <li>Create instance of object:
+  <li>Create <strong>instance</strong> of object:
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>Painter mypainter = new Painter();
 Scanner myScanner = new Scanner(System.in);
 </code></pre></div>    </div>
   </li>
-  <li>Call methods on object
+  <li>Call <strong>methods</strong> on object
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>myPainter.turnLeft();
 </code></pre></div>    </div>
   </li>
-  <li>Switch statements can be used in control flow
+  <li>
+<strong>Switch statements</strong> can be used in control flow
     <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>switch (selection) {
   case 0:  
@@ -143,6 +144,26 @@ Scanner myScanner = new Scanner(System.in);
   default:
       System.out.print("Error!");
       break;
+}
+</code></pre></div>    </div>
+  </li>
+  <li>
+<strong>Constructor</strong>: Can set initial values of an object
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>public class Number {
+int x;
+
+public Number() {
+  x = 5;  //initializing value of x in constructor
+}
+}
+</code></pre></div>    </div>
+    <p>-<strong>Inheritance</strong>: An object can inherit the characteristics of a parent object (ie. methods)</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>public class PainterPlus extends Painter { //must extend parent class
+  public PainterPlus() {
+      super(); //must call this in constructor
+  }
 }
 </code></pre></div>    </div>
   </li>
