@@ -2,6 +2,17 @@
   
     
         "post0": {
+            "title": "Objects Hacks",
+            "content": "Basics physics calculator using class, methods, console meny, and Math operations. . More notes on Objects can be found here . . import java.util.Scanner; import java.lang.Math; public class OneDimensionalPhysics { double position; double velocity; double acceleration; double time; public OneDimensionalPhysics() { this.position = 0; this.velocity = 0; this.acceleration = 0; this.time = 0; this.enterData(); this.printMenu(); boolean useMenu = true; } private void printMenu() { System.out.println(&quot;- Choose an Option -&quot;); System.out.println(&quot;0. Calculate final velocity&quot;); System.out.println(&quot;1. Calculate final position&quot;); System.out.println(&quot;2. Calculate displacement&quot;); System.out.println(&quot;3. Exit&quot;); } public void enterData() { Scanner input = new Scanner(System.in); System.out.println(&quot;Enter position, in meters: &quot;); this.position = input.nextDouble(); System.out.println(this.position); System.out.println(&quot;Enter velocity, in meters per second: &quot;); this.velocity = input.nextDouble(); System.out.println(this.velocity); System.out.println(&quot;Enter acceleration, in meters per second squared: &quot;); this.acceleration = input.nextDouble(); System.out.println(this.acceleration); System.out.println(&quot;Enter time, in second: &quot;); this.time = input.nextDouble(); System.out.println(this.time); } public double calculateFinalVelocity() { double finalVelocity = this.velocity + (this.acceleration * this.time); return finalVelocity; } public double calculateFinalPosition() { double finalPosition = this.position + (this.velocity * this.time) + (0.5 * this.acceleration * Math.pow(this.time, 2)); return finalPosition; } public static void main(String[] args) { // instance of class OneDimensionalPhysics newData = new OneDimensionalPhysics(); // create console menu Scanner menuInput = new Scanner(System.in); boolean useMenu = true; while(useMenu) { System.out.println(&quot;Menu option: &quot;); int menuChoice = menuInput.nextInt(); System.out.println(menuChoice); switch(menuChoice) { case 0: // calling method on object System.out.println(&quot; Final Velocity: &quot; + newData.calculateFinalVelocity() + &quot; &quot;); break; case 1: System.out.println(&quot; Final Position: &quot; + newData.calculateFinalPosition() + &quot; &quot;); break; case 2: System.out.println(&quot; Displacement: &quot; + (newData.calculateFinalPosition() - newData.position) + &quot; &quot;); break; case 3: System.out.println(&quot;Goodbye!&quot;); useMenu = false; break; } } System.out.println(&quot;- Summary -&quot;); System.out.println(&quot;Final Velocity: &quot; + newData.calculateFinalVelocity()); System.out.println(&quot;Final Position: &quot; + newData.calculateFinalPosition()); System.out.println(&quot;Displacement: &quot; + (newData.calculateFinalPosition() - newData.position)); } } OneDimensionalPhysics.main(null); . Enter position, in meters: 1.0 Enter velocity, in meters per second: 2.0 Enter acceleration, in meters per second squared: 3.0 Enter time, in second: 4.0 - Choose an Option - 0. Calculate final velocity 1. Calculate final position 2. Calculate displacement 3. Exit Menu option: 0 Final Velocity: 14.0 Menu option: 1 Final Position: 33.0 Menu option: 2 Displacement: 32.0 Menu option: 3 Goodbye! - Summary - Final Velocity: 14.0 Final Position: 33.0 Displacement: 32.0 .",
+            "url": "https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/29/objects.html",
+            "relUrl": "/jupyter/2022/08/29/objects.html",
+            "date": " • Aug 29, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "Bash and Installation Checks",
             "content": "Bash basics . pwd ## chose directory to work in cd vscode ## list contents of directory ls -al ## show contents of file cat README.md . Python . python --version python2 --version . Python 3.9.12 Python 2.7.18 . Conda Check . test=$(conda list | grep -c &quot;jupyter&quot;) if [ $test -gt 0 ]; then echo &quot;conda and jupyter installed correctly&quot; else echo &quot;conda and jupyter not installed correctly&quot; fi . conda and jupyter installed correctly . Jupyter Check . jupyter --version jupyter kernelspec list . Selected Jupyter core packages... IPython : 8.2.0 ipykernel : 6.9.1 ipywidgets : 7.6.5 jupyter_client : 6.1.12 jupyter_core : 4.9.2 jupyter_server : 1.13.5 jupyterlab : 3.3.2 nbclient : 0.5.13 nbconvert : 6.4.4 nbformat : 5.3.0 notebook : 6.4.8 qtconsole : 5.3.0 traitlets : 5.1.1 Available kernels: bash /home/mnarayan1/.local/share/jupyter/kernels/bash java /home/mnarayan1/.local/share/jupyter/kernels/java javascript /home/mnarayan1/.local/share/jupyter/kernels/javascript python3 /home/mnarayan1/.local/share/jupyter/kernels/python3 . Java . java --version javac --version . openjdk 11.0.16 2022-07-19 OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu120.04) OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu120.04, mixed mode, sharing) javac 11.0.16 . JavaScript . npm -version . 3.10.10 .",
             "url": "https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/25/installation-check.html",
@@ -12,7 +23,7 @@
     
   
     
-        ,"post1": {
+        ,"post2": {
             "title": "Primitives Hacks",
             "content": "Statistics Calculator . Calculates minimum, maximum, mean, and standard deviation from user-inputted data. . Demonstrates key learning on Primitives . . import java.util.Scanner; import java.lang.Math; public class StatsCalculator { ArrayList&lt;Double&gt; data; public StatsCalculator() { this.data = new ArrayList&lt;&gt;(); this.enterData(); } private void enterData() { Scanner input = new Scanner(System.in); System.out.print(&quot;Enter an numerical datapoint, type a non-numerical value to exit: n&quot;); while(true) { try { double sampleInput = input.nextDouble(); System.out.println(sampleInput); this.data.add(sampleInput); } catch (Exception e) { input.close(); break; } } } public double findMax() { double max = this.data.get(0); for (double num : this.data) { if (num &gt; max) { max = num; } } return max; } public double findMin() { double min = this.data.get(0); for (double num : this.data) { if (num &lt; min) { min = num; } } return min; } public double findAverage() { double total = 0; for (double num : this.data) { total += num; } return total/this.data.size(); } public double findStandardDeviation() { double sum = 0; for (double num : this.data) { sum += num; } double mean = sum/this.data.size(); double standardDeviation = 0; for (double num : this.data) { standardDeviation += Math.pow(num - mean, 2); } return Math.sqrt(standardDeviation/(this.data.size() - 1)); } public static void main(String[] args) { StatsCalculator newData = new StatsCalculator(); System.out.println(&quot; n-- summary --&quot;); System.out.println(&quot;data: &quot; + newData.data); System.out.println(&quot;maximum: &quot; + newData.findMax()); System.out.println(&quot;minimum: &quot; + newData.findMin()); System.out.println(&quot;mean: &quot; + newData.findAverage()); System.out.println(&quot;standard deviation: &quot; + newData.findStandardDeviation()); } } StatsCalculator.main(null); . Enter an numerical datapoint, type a non-numerical value to exit: 1.0 4.0 7.0 8.0 -- summary -- data: [1.0, 4.0, 7.0, 8.0] maximum: 8.0 minimum: 1.0 mean: 5.0 standard deviation: 3.1622776601683795 .",
             "url": "https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/23/primitives.html",
@@ -23,7 +34,7 @@
     
   
     
-        ,"post2": {
+        ,"post3": {
             "title": "Python Notebook",
             "content": "Code . print(&#39;Hello world!&#39;) . Hello world! .",
             "url": "https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/21/python-notebook.html",
@@ -34,7 +45,7 @@
     
   
     
-        ,"post3": {
+        ,"post4": {
             "title": "Java Notebook",
             "content": "Code . System.out.println(&quot;Hello world!&quot;) . Hello world! .",
             "url": "https://mnarayan1.github.io/csa-fastpages/jupyter/2022/08/21/java-notebook.html",
@@ -45,7 +56,7 @@
     
   
     
-        ,"post4": {
+        ,"post5": {
             "title": "First Post",
             "content": "“Wow, markdown is pretty cool.” ~ someone . Markdown Usage . This | is | a | list | . I promise I know how to format text. .",
             "url": "https://mnarayan1.github.io/csa-fastpages/markdown/2022/08/20/first-page.html",
@@ -75,7 +86,7 @@
   
       ,"page3": {
           "title": "Notes",
-          "content": "Notes . Primitives Lesson . . Primitives: Basic data types, don’t store any information beyond the data itself (ie. int, char, float, double) | Wrapper Classes: More complex, similar to objects. Can run methods on wrapper classes (ie. String) | .",
+          "content": "Notes . Primitives Lesson . . Primitives: Basic data types, don’t store any information beyond the data itself (ie. int, char, float, double) | Wrapper Classes: More complex, similar to objects. Can run methods on wrapper classes (ie. String) | . Objects . Create instance of object: Painter mypainter = new Painter(); Scanner myScanner = new Scanner(System.in); . | Call methods on object myPainter.turnLeft(); . | Switch statements can be used in control flow switch (selection) { case 0: System.out.print(&quot;Goodbye, World!&quot;); quit = true; break; case 1: System.out.print(&quot;Hello, World!&quot;); break; default: System.out.print(&quot;Error!&quot;); break; } . | .",
           "url": "https://mnarayan1.github.io/csa-fastpages/_pages/notes.html",
           "relUrl": "/_pages/notes.html",
           "date": ""

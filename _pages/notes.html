@@ -100,6 +100,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#notes">Notes</a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#primitives-lesson">Primitives Lesson</a></li>
+<li class="toc-entry toc-h2"><a href="#objects">Objects</a></li>
 </ul>
 </li>
 </ul><h1 id="notes">
@@ -113,6 +114,38 @@ window.onload = wrap_img;
 <strong>Primitives</strong>: Basic data types, don’t store any information beyond the data itself (ie. int, char, float, double)</li>
   <li>
 <strong>Wrapper Classes</strong>: More complex, similar to objects. Can run methods on wrapper classes (ie. String)</li>
+</ul>
+
+<h2 id="objects">
+<a class="anchor" href="#objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Objects</h2>
+<ul>
+  <li>Create instance of object:
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Painter mypainter = new Painter();
+Scanner myScanner = new Scanner(System.in);
+</code></pre></div>    </div>
+  </li>
+  <li>Call methods on object
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>myPainter.turnLeft();
+</code></pre></div>    </div>
+  </li>
+  <li>Switch statements can be used in control flow
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>switch (selection) {
+  case 0:  
+      System.out.print("Goodbye, World!");
+      quit = true;
+      break;
+  case 1:
+      System.out.print("Hello, World!");
+      break;
+  default:
+      System.out.print("Error!");
+      break;
+}
+</code></pre></div>    </div>
+  </li>
 </ul>
 
   </div><a class="u-url" href="/csa-fastpages/_pages/notes.html" hidden></a>
