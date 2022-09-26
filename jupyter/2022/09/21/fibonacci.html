@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Fibonacci" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Multiple implementations of Fibonacci algorithm" />
-<meta property="og:description" content="Multiple implementations of Fibonacci algorithm" />
+<meta name="description" content="Multiple implementations of Fibonacci algorithm, using extends" />
+<meta property="og:description" content="Multiple implementations of Fibonacci algorithm, using extends" />
 <link rel="canonical" href="https://mnarayan1.github.io/csa-fastpages/jupyter/2022/09/21/fibonacci.html" />
 <meta property="og:url" content="https://mnarayan1.github.io/csa-fastpages/jupyter/2022/09/21/fibonacci.html" />
 <meta property="og:site_name" content="fastpages" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Fibonacci" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-21T00:00:00-05:00","datePublished":"2022-09-21T00:00:00-05:00","description":"Multiple implementations of Fibonacci algorithm","headline":"Fibonacci","mainEntityOfPage":{"@type":"WebPage","@id":"https://mnarayan1.github.io/csa-fastpages/jupyter/2022/09/21/fibonacci.html"},"url":"https://mnarayan1.github.io/csa-fastpages/jupyter/2022/09/21/fibonacci.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-21T00:00:00-05:00","datePublished":"2022-09-21T00:00:00-05:00","description":"Multiple implementations of Fibonacci algorithm, using extends","headline":"Fibonacci","mainEntityOfPage":{"@type":"WebPage","@id":"https://mnarayan1.github.io/csa-fastpages/jupyter/2022/09/21/fibonacci.html"},"url":"https://mnarayan1.github.io/csa-fastpages/jupyter/2022/09/21/fibonacci.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/csa-fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://mnarayan1.github.io/csa-fastpages/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/csa-fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,13 +73,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Fibonacci</h1><p class="page-description">Multiple implementations of Fibonacci algorithm</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-21T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Fibonacci</h1><p class="page-description">Multiple implementations of Fibonacci algorithm, using extends</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-21T00:00:00-05:00" itemprop="datePublished">
         Sep 21, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -134,7 +134,7 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="For-Loops">For Loops<a class="anchor-link" href="#For-Loops"> </a></h2>
+<h2 id="For-Loops-with-extends">For Loops with extends<a class="anchor-link" href="#For-Loops-with-extends"> </a></h2>
 </div>
 </div>
 </div>
@@ -145,7 +145,9 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">Fibonacci</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// for loops</span>
+
+<span class="kd">class</span> <span class="nc">Fibonacci</span> <span class="p">{</span>
     <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">sequence</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">steps</span><span class="p">;</span>
 
@@ -179,6 +181,23 @@ window.onload = wrap_img;
 <span class="p">}</span>
 
 <span class="n">Fibonacci</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="c1">// for loop with extends</span>
+<span class="kd">class</span> <span class="nc">Fibo</span> <span class="kd">extends</span> <span class="n">Fibonacci</span> <span class="p">{</span>
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">sequence</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">steps</span><span class="p">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Fibo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// inherits properties of for loop, so we don&#39;t have to rewrite functions</span>
+        <span class="kd">super</span><span class="p">();</span>
+    <span class="p">}</span>    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>  <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nUsing extends:&quot;</span><span class="p">);</span>
+        <span class="k">new</span> <span class="n">Fibo</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Fibo</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -192,6 +211,11 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>How many terms do you want to generate? (greater than 2)
+8
+[0, 1, 1, 2, 3, 5, 8, 13]
+
+Using extends:
+How many terms do you want to generate? (greater than 2)
 8
 [0, 1, 1, 2, 3, 5, 8, 13]
 </pre>
