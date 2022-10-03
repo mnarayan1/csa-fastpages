@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>API | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="API" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Using RapiAPI and creating a Web Service" />
+<meta property="og:description" content="Using RapiAPI and creating a Web Service" />
+<link rel="canonical" href="https://mnarayan1.github.io/csa-fastpages/jupyter/2022/10/02/api.html" />
+<meta property="og:url" content="https://mnarayan1.github.io/csa-fastpages/jupyter/2022/10/02/api.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-02T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="API" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-02T00:00:00-05:00","datePublished":"2022-10-02T00:00:00-05:00","description":"Using RapiAPI and creating a Web Service","headline":"API","mainEntityOfPage":{"@type":"WebPage","@id":"https://mnarayan1.github.io/csa-fastpages/jupyter/2022/10/02/api.html"},"url":"https://mnarayan1.github.io/csa-fastpages/jupyter/2022/10/02/api.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/csa-fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://mnarayan1.github.io/csa-fastpages/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/csa-fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/csa-fastpages/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/csa-fastpages/about/">About Me</a><a class="page-link" href="/csa-fastpages/_pages/notes.html">Notes</a><a class="page-link" href="/csa-fastpages/search/">Search</a><a class="page-link" href="/csa-fastpages/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">API</h1><p class="page-description">Using RapiAPI and creating a Web Service</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-02T00:00:00-05:00" itemprop="datePublished">
+        Oct 2, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/csa-fastpages/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/mnarayan1/csa-fastpages/tree/master/_notebooks/2022-10-2-api.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/csa-fastpages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/mnarayan1/csa-fastpages/master?filepath=_notebooks%2F2022-10-2-api.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/csa-fastpages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/mnarayan1/csa-fastpages/blob/master/_notebooks/2022-10-2-api.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/csa-fastpages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fmnarayan1%2Fcsa-fastpages%2Fblob%2Fmaster%2F_notebooks%2F2022-10-2-api.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/csa-fastpages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-10-2-api.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Basic-Syntax">Basic Syntax<a class="anchor-link" href="#Basic-Syntax"> </a></h2><ul>
+<li>HTTP client sends requests and retrieves a response</li>
+<li>A response body will be received if the request is successful</li>
+<li>The JSON data from the API can formatted for our needs</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">URI</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">HttpClient</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">HttpRequest</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">HttpResponse</span><span class="p">;</span>
+
+<span class="nx">HttpRequest</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">HttpRequest</span><span class="p">.</span><span class="nx">newBuilder</span><span class="p">()</span>
+		<span class="p">.</span><span class="nx">uri</span><span class="p">(</span><span class="nx">URI</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s2">&quot;https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=dream%20face%20reveal&amp;pageNumber=1&amp;pageSize=10&amp;autoCorrect=true&quot;</span><span class="p">))</span>
+		<span class="p">.</span><span class="nx">header</span><span class="p">(</span><span class="s2">&quot;X-RapidAPI-Key&quot;</span><span class="p">,</span> <span class="s2">&quot;ba3cd3168dmsh90f3dc264426f1bp1aa7f3jsne8dc8f45e66c&quot;</span><span class="p">)</span>
+		<span class="p">.</span><span class="nx">header</span><span class="p">(</span><span class="s2">&quot;X-RapidAPI-Host&quot;</span><span class="p">,</span> <span class="s2">&quot;contextualwebsearch-websearch-v1.p.rapidapi.com&quot;</span><span class="p">)</span>
+		<span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="nx">HttpRequest</span><span class="p">.</span><span class="nx">BodyPublishers</span><span class="p">.</span><span class="nx">noBody</span><span class="p">())</span>
+		<span class="p">.</span><span class="nx">build</span><span class="p">();</span>
+<span class="nx">HttpResponse</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">HttpClient</span><span class="p">.</span><span class="nx">newHttpClient</span><span class="p">().</span><span class="nx">send</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">HttpResponse</span><span class="p">.</span><span class="nx">BodyHandlers</span><span class="p">.</span><span class="nx">ofString</span><span class="p">());</span>
+
+<span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">());</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#34;_type&#34;:&#34;images&#34;,&#34;totalCount&#34;:1178,&#34;value&#34;:[{&#34;url&#34;:&#34;https://editors.dexerto.com/wp-content/uploads/2022/10/02/danny-gonzales-dream-face-reveal.jpg&#34;,&#34;height&#34;:675,&#34;width&#34;:1200,&#34;thumbnail&#34;:&#34;https://rapidapi.usearch.com/api/thumbnail/get?value=3818080606879595940&#34;,&#34;thumbnailHeight&#34;:126,&#34;thumbnailWidth&#34;:224,&#34;base64Encoding&#34;:null,&#34;name&#34;:&#34;&#34;,&#34;title&#34;:&#34;Dream fans demand Facetime with Danny Gonzalez amid face reveal campaign - Dexerto&#34;,&#34;provider&#34;:{&#34;name&#34;:&#34;dexerto&#34;,&#34;favIcon&#34;:&#34;&#34;,&#34;favIconBase64Encoding&#34;:&#34;&#34;},&#34;imageWebSearchUrl&#34;:&#34;https://usearch.com/search/dream%20face%20reveal/images&#34;,&#34;webpageUrl&#34;:&#34;https://www.dexerto.com/entertainment/dream-fans-demand-facetime-with-danny-gonzales-amid-face-reveal-campaign-1947806/&#34;},{&#34;url&#34;:&#34;https://lezeto.s3.us-east-2.amazonaws.com/wp-content/uploads/2021/12/01091052/Dream-Face-Reveal-Drama.jpg&#34;,&#34;height&#34;:432,&#34;width&#34;:768,&#34;thumbnail&#34;:&#34;https://rapidapi.usearch.com/api/thumbnail/get?value=7108681215082112798&#34;,&#34;thumbnailHeight&#34;:108,&#34;thumbnailWidth&#34;:192,&#34;base64Encoding&#34;:null,&#34;name&#34;:&#34;&#34;,&#34;title&#34;:&#34;The Truth About Dream Face Reveal Drama - Lezeto.com&#34;,&#34;provider&#34;:{&#34;name&#34;:&#34;lezeto&#34;,&#34;favIcon&#34;:&#34;&#34;,&#34;favIconBase64Encoding&#34;:&#34;&#34;},&#34;imageWebSearchUrl&#34;:&#34;https://usearch.com/search/dream%20face%20reveal/images&#34;,&#34;webpageUrl&#34;:&#34;https://www.lezeto.com/the-truth-about-dream-face-reveal-drama/&#34;},{&#34;url&#34;:&#34;https://shotoe.com/uploads/news/28/2855/1/2855173-everything-dream-has-said-about-their-face-reveal-plans.jpg&#34;,&#34;height&#34;:319,&#34;width&#34;:544,&#34;thumbnail&#34;:&#34;https://rapidapi.usearch.com/api/thumbnail/get?value=422798834116271533&#34;,&#34;thumbnailHeight&#34;:119,&#34;thumbnailWidth&#34;:202,&#34;base64Encoding&#34;:null,&#34;name&#34;:&#34;&#34;,&#34;title&#34;:&#34;Everything Dream Has Said About Their &#39;Face Reveal...  Dream  Shotoe&#34;,&#34;provider&#34;:{&#34;name&#34;:&#34;shotoe&#34;,&#34;favIcon&#34;:&#34;&#34;,&#34;favIconBase64Encoding&#34;:&#34;&#34;},&#34;imageWebSearchUrl&#34;:&#34;https://usearch.com/search/dream%20face%20reveal/images&#34;,&#34;webpageUrl&#34;:&#34;https://shotoe.com/dream-st_275423/news/everything-dream-has-said-about-their-face-reveal-plans-sn_2855173/&#34;},{&#34;url&#34;:&#34;https://www.svg.com/img/gallery/dream-knows-how-he-wants-to-do-a-face-reveal/l-intro-1623261532.jpg&#34;,&#34;height&#34;:900,&#34;width&#34;:1600,&#34;thumbnail&#34;:&#34;https://rapidapi.usearch.com/api/thumbnail/get?value=8835138760831175764&#34;,&#34;thumbnailHeight&#34;:126,&#34;thumbnailWidth&#34;:224,&#34;base64Encoding&#34;:null,&#34;name&#34;:&#34;&#34;,&#34;title&#34;:&#34;Dream Knows How He Wants To Do A Face Reveal&#34;,&#34;provider&#34;:{&#34;name&#34;:&#34;svg&#34;,&#34;favIcon&#34;:&#34;&#34;,&#34;favIconBase64Encoding&#34;:&#34;&#34;},&#34;imageWebSearchUrl&#34;:&#34;https://usearch.com/search/dream%20face%20reveal/images&#34;,&#34;webpageUrl&#34;:&#34;https://www.svg.com/432967/dream-knows-how-he-wants-to-do-a-face-reveal/&#34;},{&#34;url&#34;:&#34;https://static3.gamerantimages.com/wordpress/wp-content/uploads/2021/01/dream-face-reveal.jpg&#34;,&#34;height&#34;:700,&#34;width&#34;:1400,&#34;thumbnail&#34;:&#34;https://rapidapi.usearch.com/api/thumbnail/get?value=140615080090905572&#34;,&#34;thumbnailHeight&#34;:98,&#34;thumbnailWidth&#34;:196,&#34;base64Encoding&#34;:null,&#34;name&#34;:&#34;&#34;,&#34;title&#34;:&#34;Popular YouTuber Dream Has Been Doxed | Game Rant&#34;,&#34;provider&#34;:{&#34;name&#34;:&#34;gamerantimages&#34;,&#34;favIcon&#34;:&#34;&#34;,&#34;favIconBase64Encoding&#34;:&#34;&#34;},&#34;imageWebSearchUrl&#34;:&#34;https://usearch.com/search/dream%20face%20reveal/images&#34;,&#34;webpageUrl&#34;:&#34;https://gamerant.com/dream-face-reveal-youtube-dox/&#34;},{&#34;url&#34;:&#34;https://www.dexerto.com/wp-content/uploads/2022/03/30/dream-face-reveal-when.jpg&#34;,&#34;height&#34;:900,&#34;width&#34;:1600,&#34;thumbnail&#34;:&#34;https://rapidapi.usearch.com/api/thumbnail/get?value=3063018545565945965&#34;,&#34;thumbnailHeight&#34;:225,&#34;thumbnailWidth&#34;:400,&#34;base64Encoding&#34;:null,&#34;name&#34;:&#34;Dream face reveal teaser&#34;,&#34;title&#34;:&#34;Dream face reveal: Will Dream finally show his face after more teasers? - Dexerto&#34;,&#34;provider&#34;:{&#34;name&#34;:&#34;dexerto&#34;,&#34;favIcon&#34;:&#34;&#34;,&#34;favIconBase64Encoding&#34;:&#34;&#34;},&#34;imageWebSearchUrl&#34;:&#34;https://usearch.com/search/dream%20face%20reveal/images&#34;,&#34;webpageUrl&#34;:&#34;https://www.dexerto.com/entertainment/dream-face-reveal-1794663/&#34;},{&#34;url&#34;:&#34;https://staticg.sportskeeda.com/editor/2022/10/30084-16647305086199-1920.jpg&#34;,&#34;height&#34;:1080,&#34;width&#34;:1920,&#34;thumbnail&#34;:&#34;https://rapidapi.usearch.com/api/thumbnail/get?value=6329458979250092495&#34;,&#34;thumbnailHeight&#34;:135,&#34;thumbnailWidth&#34;:240,&#34;base64Encoding&#34;:null,&#34;name&#34;:&#34;Dream trending on Twitter after teasing an early face reveal (Image via Sportskeeda)&#34;,&#34;title&#34;:&#34;\&#34;Proud of Dream\&#34; trends on Twitter as fans celebrate journey of Minecraft star before his official face-reveal&#34;,&#34;provider&#34;:{&#34;name&#34;:&#34;sportskeeda&#34;,&#34;favIcon&#34;:&#34;&#34;,&#34;favIconBase64Encoding&#34;:&#34;&#34;},&#34;imageWebSearchUrl&#34;:&#34;https://usearch.com/search/dream%20face%20reveal/images&#34;,&#34;webpageUrl&#34;:&#34;https://www.sportskeeda.com/esports/news-proud-dream-trends-twitter-fans-celebrate-journey-minecraft-star-official-face-reveal&#34;},{&#34;url&#34;:&#34;https://famouspeopletoday.com/wp-content/uploads/2021/05/ChrisFix-Net-Worth-Face-Reveal-Real-Name-Biography.jpg&#34;,&#34;height&#34;:805,&#34;width&#34;:1210,&#34;thumbnail&#34;:&#34;https://rapidapi.usearch.com/api/thumbnail/get?value=6606051994259958598&#34;,&#34;thumbnailHeight&#34;:402,&#34;thumbnailWidth&#34;:604,&#34;base64Encoding&#34;:null,&#34;name&#34;:&#34;&#34;,&#34;title&#34;:&#34;ChrisFix - Net Worth, Face Reveal, Real Name, Biography - Famous People Today&#34;,&#34;provider&#34;:{&#34;name&#34;:&#34;famouspeopletoday&#34;,&#34;favIcon&#34;:&#34;&#34;,&#34;favIconBase64Encoding&#34;:&#34;&#34;},&#34;imageWebSearchUrl&#34;:&#34;https://usearch.com/search/dream%20face%20reveal/images&#34;,&#34;webpageUrl&#34;:&#34;https://famouspeopletoday.com/chrisfix/&#34;},{&#34;url&#34;:&#34;https://staticc.sportskeeda.com/editor/2022/10/123da-16647288760781-1920.jpg&#34;,&#34;height&#34;:1081,&#34;width&#34;:1920,&#34;thumbnail&#34;:&#34;https://rapidapi.usearch.com/api/thumbnail/get?value=362576054151781025&#34;,&#34;thumbnailHeight&#34;:135,&#34;thumbnailWidth&#34;:239,&#34;base64Encoding&#34;:null,&#34;name&#34;:&#34;Minecraft fame Dream teases much-awaited face reveal  (Image via Sportskeeda)&#34;,&#34;title&#34;:&#34;Why Dream&#39;s face-reveal means so much to Minecraft community&#34;,&#34;provider&#34;:{&#34;name&#34;:&#34;sportskeeda&#34;,&#34;favIcon&#34;:&#34;&#34;,&#34;favIconBase64Encoding&#34;:&#34;&#34;},&#34;imageWebSearchUrl&#34;:&#34;https://usearch.com/search/dream%20face%20reveal/images&#34;,&#34;webpageUrl&#34;:&#34;https://www.sportskeeda.com/esports/why-dream-s-face-reveal-means-much-minecraft-community&#34;},{&#34;url&#34;:&#34;https://staticc.sportskeeda.com/editor/2022/10/6c2c4-16647164620710-1920.jpg&#34;,&#34;height&#34;:1081,&#34;width&#34;:1920,&#34;thumbnail&#34;:&#34;https://rapidapi.usearch.com/api/thumbnail/get?value=27269792429543382&#34;,&#34;thumbnailHeight&#34;:135,&#34;thumbnailWidth&#34;:239,&#34;base64Encoding&#34;:null,&#34;name&#34;:&#34;Popular Minecraft YouTuber Dream has fans riled up as they await his face reveal (Image via Twitter)&#34;,&#34;title&#34;:&#34;Why is &#39;Dream face reveal&#39; trending on Twitter?&#34;,&#34;provider&#34;:{&#34;name&#34;:&#34;sportskeeda&#34;,&#34;favIcon&#34;:&#34;&#34;,&#34;favIconBase64Encoding&#34;:&#34;&#34;},&#34;imageWebSearchUrl&#34;:&#34;https://usearch.com/search/dream%20face%20reveal/images&#34;,&#34;webpageUrl&#34;:&#34;https://www.sportskeeda.com/esports/why-dream-face-reveal-trending-twitter&#34;}]}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Web-Service">Web Service<a class="anchor-link" href="#Web-Service"> </a></h2><p>We will be using JavaScript in our application for easier compatibility with HTML and CSS. Below is a web service written in JavaScript for a search API.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">function</span> <span class="nx">ApiRequest</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kr">const</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;https&quot;</span><span class="p">);</span>
+	
+	<span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;hostname&quot;</span><span class="o">:</span> <span class="s2">&quot;contextualwebsearch-websearch-v1.p.rapidapi.com&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;port&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+		<span class="s2">&quot;path&quot;</span><span class="o">:</span> <span class="s2">&quot;/api/Search/ImageSearchAPI?q=taylor%20swift&amp;pageNumber=1&amp;pageSize=10&amp;autoCorrect=true&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;headers&quot;</span><span class="o">:</span> <span class="p">{</span>
+			<span class="s2">&quot;X-RapidAPI-Key&quot;</span><span class="o">:</span> <span class="s2">&quot;ba3cd3168dmsh90f3dc264426f1bp1aa7f3jsne8dc8f45e66c&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;X-RapidAPI-Host&quot;</span><span class="o">:</span> <span class="s2">&quot;contextualwebsearch-websearch-v1.p.rapidapi.com&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;useQueryString&quot;</span><span class="o">:</span> <span class="kc">true</span>
+		<span class="p">}</span>
+	<span class="p">};</span>
+	
+	<span class="kr">const</span> <span class="nx">req</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+		<span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+	
+		<span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">str</span> <span class="o">+=</span> <span class="nx">chunk</span><span class="p">;</span>
+		<span class="p">});</span>
+	
+		<span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;end&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+			<span class="nx">parsedData</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+
+			<span class="c1">// print first hit in data</span>
+			<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">parsedData</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">][</span><span class="mf">0</span><span class="p">])</span>
+		<span class="p">});</span>
+	<span class="p">});</span>
+	
+	<span class="nx">req</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">ApiRequest</span><span class="p">();</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{ url: &#39;http://cache.umusic.com/_sites/_halo/taylorswift/images/meta-image.jpg&#39;,
+  height: 630,
+  width: 1200,
+  thumbnail: &#39;https://rapidapi.usearch.com/api/thumbnail/get?value=1094927124898698511&#39;,
+  thumbnailHeight: 157,
+  thumbnailWidth: 299,
+  base64Encoding: null,
+  name: &#39;&#39;,
+  title: &#39;Taylor Swift - Official Website&#39;,
+  provider: { name: &#39;umusic&#39;, favIcon: &#39;&#39;, favIconBase64Encoding: &#39;&#39; },
+  imageWebSearchUrl: &#39;https://usearch.com/search/taylor%20swift/images&#39;,
+  webpageUrl: &#39;https://www.taylorswift.com/&#39; }
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="mnarayan1/csa-fastpages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/csa-fastpages/jupyter/2022/10/02/api.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/csa-fastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/csa-fastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/csa-fastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/csa-fastpages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/csa-fastpages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
