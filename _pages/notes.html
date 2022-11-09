@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -97,17 +97,16 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#notes">Notes</a>
-<ul>
-<li class="toc-entry toc-h2"><a href="#primitives-lesson">Primitives Lesson</a></li>
-<li class="toc-entry toc-h2"><a href="#objects">Objects</a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h1"><a href="#notes">Notes</a></li>
+<li class="toc-entry toc-h1"><a href="#unit-1---primitive-types">Unit 1 - Primitive Types</a></li>
+<li class="toc-entry toc-h1"><a href="#unit-2---using-objects">Unit 2 - Using Objects</a></li>
+<li class="toc-entry toc-h1"><a href="#unit-3---boolean-expressions-and-control-structures">Unit 3 - Boolean Expressions and Control Structures</a></li>
+<li class="toc-entry toc-h1"><a href="#unit-4-iteration">Unit 4: Iteration</a></li>
 </ul><h1 id="notes">
 <a class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h1>
 
-<h2 id="primitives-lesson">
-<a class="anchor" href="#primitives-lesson" aria-hidden="true"><span class="octicon octicon-link"></span></a>Primitives Lesson</h2>
+<h1 id="unit-1---primitive-types">
+<a class="anchor" href="#unit-1---primitive-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 1 - Primitive Types</h1>
 <p><img src="/csa-fastpages/images/data_types.png" alt="data types"></p>
 <ul>
   <li>
@@ -116,8 +115,8 @@ window.onload = wrap_img;
 <strong>Wrapper Classes</strong>: More complex, similar to objects. Can run methods on wrapper classes (ie. String)</li>
 </ul>
 
-<h2 id="objects">
-<a class="anchor" href="#objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Objects</h2>
+<h1 id="unit-2---using-objects">
+<a class="anchor" href="#unit-2---using-objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 2 - Using Objects</h1>
 <ul>
   <li>Create <strong>instance</strong> of object:
     <div class="language-plaintext highlighter-rouge">
@@ -130,6 +129,54 @@ Scanner myScanner = new Scanner(System.in);
 <div class="highlight"><pre class="highlight"><code>myPainter.turnLeft();
 </code></pre></div>    </div>
   </li>
+</ul>
+
+<h1 id="unit-3---boolean-expressions-and-control-structures">
+<a class="anchor" href="#unit-3---boolean-expressions-and-control-structures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 3 - Boolean Expressions and Control Structures</h1>
+<ul>
+  <li>
+<strong>Boolean</strong>: a primitive data type that is either true or false
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>boolean computersAreCool = true;
+boolean paperIsCool = false;
+</code></pre></div>    </div>
+  </li>
+  <li>
+<strong>Boolean Expression</strong>: an expression that evaluates as either true or false
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>1==1                    // is true, because 1 will always be equal to 1
+a &lt; 1                   // will sometimes be true, because not all values of a will be less than 1
+“paper” == “good”       // is false, because the string “paper” is not equal to the string “good”
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>We can use boolean expressions in control structures to run programs when certain conditions are met.</p>
+
+<ul>
+  <li>
+<strong>if</strong> statements will run a code block if a particular condition is true.</li>
+</ul>
+
+<p>Structure:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(condition) {
+    // code will run when condition is true
+}
+</code></pre></div></div>
+
+<p>A single <code class="language-plaintext highlighter-rouge">if</code> statement only takes one condition, but what if we wanted to specify more conditions? We can add <code class="language-plaintext highlighter-rouge">else if</code> and <code class="language-plaintext highlighter-rouge">else</code> statements to accomplish this.</p>
+
+<p>Structure:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(condition) {
+    // code to execute when condition is met
+} else if (condition 2) {
+    // code to execute when condition is false but condition 2 is true
+} else {
+    // code to execute when condition and condition 2 are false
+}
+</code></pre></div></div>
+
+<ul>
   <li>
 <strong>Switch statements</strong> can be used in control flow
     <div class="language-plaintext highlighter-rouge">
@@ -148,26 +195,132 @@ Scanner myScanner = new Scanner(System.in);
 </code></pre></div>    </div>
   </li>
   <li>
-<strong>Constructor</strong>: Can set initial values of an object
-    <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>public class Number {
-int x;
+<strong>DeMorgan’s Laws</strong> show how to deal with the negation of a conditional statements. When <code class="language-plaintext highlighter-rouge">!</code> is applied:</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">true</code> will become <code class="language-plaintext highlighter-rouge">false</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">false</code> will become <code class="language-plaintext highlighter-rouge">true</code>
+</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+<code class="language-plaintext highlighter-rouge">and</code> (&amp;&amp;) will become <code class="language-plaintext highlighter-rouge">or</code> (</td>
+          <td> </td>
+          <td>)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
 
-public Number() {
-  x = 5;  //initializing value of x in constructor
-}
-}
-</code></pre></div>    </div>
-    <p>-<strong>Inheritance</strong>: An object can inherit the characteristics of a parent object (ie. methods)</p>
+<h1 id="unit-4-iteration">
+<a class="anchor" href="#unit-4-iteration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 4: Iteration</h1>
+<ul>
+  <li>
+<strong>While Loops:</strong> Repeat code while boolean expression evaluates to true
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>public class PainterPlus extends Painter { //must extend parent class
-  public PainterPlus() {
-      super(); //must call this in constructor
-  }
+<div class="highlight"><pre class="highlight"><code>while (condition) {
+  // code to run
 }
 </code></pre></div>    </div>
   </li>
+  <li>While loops are useful to iterate over arrays
+```
+int[] array = {1, 2, 3, 4}
+int total = 0;
+int i = 9;</li>
 </ul>
+
+<p>while(i &lt; array.length) {
+    total += array[i];
+    i++;
+}</p>
+
+<p>System.out.println(total);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Infinite while loops run over and over again, since the condition is always true; useful for user input
+</code></pre></div></div>
+<p>while(true) {
+    System.out.println(“Choose an option”);
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+**For Loops**
+
+Three Parts of a For Loop
+- Initialize Variable
+- Test Condition
+- Change of variable
+</code></pre></div></div>
+<p>for(int x = 1; x&lt;=5; x++) {
+    System.out.println(x);
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+**For Each Loops**
+- Iterates through elements of arrays and collections (ArrayList)
+
+</code></pre></div></div>
+<p>for(dataType item : array) {
+    // code here
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+# Unit 5: Writing Classes
+
+- **Constructor**: Can set initial values of an object
+</code></pre></div></div>
+<p>public class Number {
+  int x;</p>
+
+<p>public Number() {
+    x = 5;  //initializing value of x in constructor
+  }
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-**Inheritance**: An object can inherit the characteristics of a parent object (ie. methods)
+</code></pre></div></div>
+<p>public class PainterPlus extends Painter { //must extend parent class
+    public PainterPlus() {
+        super(); //must call this in constructor
+    }
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Data Encapsulation**
+
+- Can restruct access to read-only or write-only through accessor/mutator methods
+
+**5.4 Accessor Methods (getters)**
+- Non-void, includes a return type
+- ``toString`` will return a string from an object's properties
+
+</code></pre></div></div>
+<p>public String toString() {
+    return “Type: “ +  type;
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+**5.5 Mutator Method (Setter)**
+
+- Usually a void avriable that changes static variables
+
+**Static Variables and Methods**
+- Static variables and methods belong to a class and are called with a ClassName rather than the object name
+
+**this keyword**
+- refers to the instance variables in a class
+
+# Unit 6: Array
+
+**6.1 Array Creation and Access**
+- Arrays are used to store one data type
+- Unlike Arraylists, arrays have a fixed size and cannot be changed
+- Arrays can be denoted using braces {}
+- To use an array you have to use the command import java.util.Arrays;
+
+**6.3 Enhanced for loop for Arrays**
+
+</code></pre></div></div>
+<p>for(dataType i: arrayName) {
+    do something with i
+}
+```</p>
 
   </div><a class="u-url" href="/csa-fastpages/_pages/notes.html" hidden></a>
 </article>
