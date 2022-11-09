@@ -102,6 +102,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#unit-2---using-objects">Unit 2 - Using Objects</a></li>
 <li class="toc-entry toc-h1"><a href="#unit-3---boolean-expressions-and-control-structures">Unit 3 - Boolean Expressions and Control Structures</a></li>
 <li class="toc-entry toc-h1"><a href="#unit-4-iteration">Unit 4: Iteration</a></li>
+<li class="toc-entry toc-h1"><a href="#unit-5-writing-classes">Unit 5: Writing Classes</a></li>
+<li class="toc-entry toc-h1"><a href="#unit-6-array">Unit 6: Array</a></li>
 </ul><h1 id="notes">
 <a class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h1>
 
@@ -216,101 +218,131 @@ a &lt; 1                   // will sometimes be true, because not all values of 
 }
 </code></pre></div>    </div>
   </li>
-  <li>While loops are useful to iterate over arrays
-```
-int[] array = {1, 2, 3, 4}
-int total = 0;
-int i = 9;</li>
+  <li>While loops are useful to iterate over arrays</li>
 </ul>
 
-<p>while(i &lt; array.length) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int[] array = {1, 2, 3, 4}
+int total = 0;
+int i = 9;
+
+while(i &lt; array.length) {
     total += array[i];
     i++;
-}</p>
+}
 
-<p>System.out.println(total);</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Infinite while loops run over and over again, since the condition is always true; useful for user input
+System.out.println(total);
 </code></pre></div></div>
-<p>while(true) {
-    System.out.println(“Choose an option”);
-}</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-**For Loops**
 
-Three Parts of a For Loop
-- Initialize Variable
-- Test Condition
-- Change of variable
+<ul>
+  <li>Infinite while loops run over and over again, since the condition is always true; useful for user input</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while(true) {
+    System.out.println("Choose an option");
+}
 </code></pre></div></div>
-<p>for(int x = 1; x&lt;=5; x++) {
+
+<p><strong>For Loops</strong></p>
+
+<p>Three Parts of a For Loop</p>
+<ul>
+  <li>Initialize Variable</li>
+  <li>Test Condition</li>
+  <li>Change of variable</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(int x = 1; x&lt;=5; x++) {
     System.out.println(x);
-}</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-**For Each Loops**
-- Iterates through elements of arrays and collections (ArrayList)
-
+}
 </code></pre></div></div>
-<p>for(dataType item : array) {
+
+<p><strong>For Each Loops</strong></p>
+<ul>
+  <li>Iterates through elements of arrays and collections (ArrayList)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(dataType item : array) {
     // code here
-}</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-# Unit 5: Writing Classes
-
-- **Constructor**: Can set initial values of an object
-
+}
 </code></pre></div></div>
-<p>public class Number {
-  int x;</p>
 
-<p>public Number() {
+<h1 id="unit-5-writing-classes">
+<a class="anchor" href="#unit-5-writing-classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 5: Writing Classes</h1>
+
+<ul>
+  <li>
+<strong>Constructor</strong>: Can set initial values of an object</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class Number {
+  int x;
+
+  public Number() {
     x = 5;  //initializing value of x in constructor
   }
-}</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-**Inheritance**: An object can inherit the characteristics of a parent object (ie. methods)
+}
 </code></pre></div></div>
-<p>public class PainterPlus extends Painter { //must extend parent class
+
+<p>-<strong>Inheritance</strong>: An object can inherit the characteristics of a parent object (ie. methods)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class PainterPlus extends Painter { //must extend parent class
     public PainterPlus() {
         super(); //must call this in constructor
     }
-}</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Data Encapsulation**
-
-- Can restruct access to read-only or write-only through accessor/mutator methods
-
-**5.4 Accessor Methods (getters)**
-- Non-void, includes a return type
-- ``toString`` will return a string from an object's properties
-
+}
 </code></pre></div></div>
-<p>public String toString() {
-    return “Type: “ +  type;
-}</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-**5.5 Mutator Method (Setter)**
 
-- Usually a void avriable that changes static variables
+<p><strong>Data Encapsulation</strong></p>
 
-**Static Variables and Methods**
-- Static variables and methods belong to a class and are called with a ClassName rather than the object name
+<ul>
+  <li>Can restruct access to read-only or write-only through accessor/mutator methods</li>
+</ul>
 
-**this keyword**
-- refers to the instance variables in a class
+<p><strong>5.4 Accessor Methods (getters)</strong></p>
+<ul>
+  <li>Non-void, includes a return type</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">toString</code> will return a string from an object’s properties</li>
+</ul>
 
-# Unit 6: Array
-
-**6.1 Array Creation and Access**
-- Arrays are used to store one data type
-- Unlike Arraylists, arrays have a fixed size and cannot be changed
-- Arrays can be denoted using braces {}
-- To use an array you have to use the command import java.util.Arrays;
-
-**6.3 Enhanced for loop for Arrays**
-
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public String toString() {
+    return "Type: " +  type;
+}
 </code></pre></div></div>
-<p>for(dataType i: arrayName) {
+
+<p><strong>5.5 Mutator Method (Setter)</strong></p>
+
+<ul>
+  <li>Usually a void avriable that changes static variables</li>
+</ul>
+
+<p><strong>Static Variables and Methods</strong></p>
+<ul>
+  <li>Static variables and methods belong to a class and are called with a ClassName rather than the object name</li>
+</ul>
+
+<p><strong>this keyword</strong></p>
+<ul>
+  <li>refers to the instance variables in a class</li>
+</ul>
+
+<h1 id="unit-6-array">
+<a class="anchor" href="#unit-6-array" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 6: Array</h1>
+
+<p><strong>6.1 Array Creation and Access</strong></p>
+<ul>
+  <li>Arrays are used to store one data type</li>
+  <li>Unlike Arraylists, arrays have a fixed size and cannot be changed</li>
+  <li>Arrays can be denoted using braces {}</li>
+  <li>To use an array you have to use the command import java.util.Arrays;</li>
+</ul>
+
+<p><strong>6.3 Enhanced for loop for Arrays</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(dataType i: arrayName) {
     do something with i
 }
-```</p>
+</code></pre></div></div>
 
   </div><a class="u-url" href="/csa-fastpages/_pages/notes.html" hidden></a>
 </article>
