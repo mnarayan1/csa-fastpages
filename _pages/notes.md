@@ -81,7 +81,7 @@ switch (selection) {
 - **DeMorgan's Laws** show how to deal with the negation of a conditional statements. When ``!`` is applied: 
 - ``true`` will become ``false``
 - ``false`` will become ``true``
-- `and` (&&) will become `or` (||)
+- && will become \|\|
 
 # Unit 4: Iteration
 - **While Loops:** Repeat code while boolean expression evaluates to true
@@ -134,6 +134,7 @@ for(dataType item : array) {
 # Unit 5: Writing Classes
 
 - **Constructor**: Can set initial values of an object
+
 ```
 public class Number {
   int x;
