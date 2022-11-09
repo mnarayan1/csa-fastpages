@@ -91,6 +91,7 @@ while (condition) {
 }
 ```
 - While loops are useful to iterate over arrays
+
 ```
 int[] array = {1, 2, 3, 4}
 int total = 0;
@@ -103,7 +104,9 @@ while(i < array.length) {
 
 System.out.println(total);
 ```
+
 - Infinite while loops run over and over again, since the condition is always true; useful for user input
+
 ```
 while(true) {
     System.out.println("Choose an option");
@@ -116,6 +119,7 @@ Three Parts of a For Loop
 - Initialize Variable
 - Test Condition
 - Change of variable
+
 ```
 for(int x = 1; x<=5; x++) {
     System.out.println(x);
@@ -144,7 +148,9 @@ public class Number {
   }
 }
 ```
+
 -**Inheritance**: An object can inherit the characteristics of a parent object (ie. methods)
+
 ```
 public class PainterPlus extends Painter { //must extend parent class
     public PainterPlus() {
@@ -152,6 +158,7 @@ public class PainterPlus extends Painter { //must extend parent class
     }
 }
 ```
+
 **Data Encapsulation**
 
 - Can restruct access to read-only or write-only through accessor/mutator methods
