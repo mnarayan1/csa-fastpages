@@ -198,3 +198,58 @@ for(dataType i: arrayName) {
     do something with i
 }
 ```
+
+# Unit 7: ArrayList
+**Introduction**
+- Mutable and contains object references
+
+**Methods**
+- ArrayList.add(int index, element)
+- ArrayList.addAll(int index, Collection collection)
+- ArrayList.size()
+- ArrayList.clear()
+
+**ArrayList Loops**
+- For loop
+
+```
+int sum = 0;
+for (int i = 0; i < roster.size(); i++) {
+    sum = sum + roster.get(i).length();
+}
+System.out.println(sum);
+```
+
+- While loop
+
+```
+int sum = 0;
+int i = 0;
+while (i < roster.size() ) {
+    sum = sum + roster.get(i).length();
+    i ++
+}
+System.out.println(sum);
+```
+
+- Enhanced for loop
+
+```
+int sum = 0;
+for(String name: roster) {
+    sum = sum + name.length();
+}
+System.out.println(sum);
+```
+
+**Searching**
+- The locating of data within linear structures
+- Involves control structures
+
+**Sorting**
+- Sorts the ArrayList in a specified order
+
+```
+Collections.sort({list name}); // ascending order
+Collections.sort(ArrayList, Collections.reverseOrder()); // descending order
+```
