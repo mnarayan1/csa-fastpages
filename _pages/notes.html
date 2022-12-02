@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -104,6 +104,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#unit-4-iteration">Unit 4: Iteration</a></li>
 <li class="toc-entry toc-h1"><a href="#unit-5-writing-classes">Unit 5: Writing Classes</a></li>
 <li class="toc-entry toc-h1"><a href="#unit-6-array">Unit 6: Array</a></li>
+<li class="toc-entry toc-h1"><a href="#unit-7-arraylist">Unit 7: ArrayList</a></li>
 </ul><h1 id="notes">
 <a class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h1>
 
@@ -344,6 +345,72 @@ System.out.println(total);
 }
 </code></pre></div></div>
 
+<h1 id="unit-7-arraylist">
+<a class="anchor" href="#unit-7-arraylist" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 7: ArrayList</h1>
+<p><strong>Introduction</strong></p>
+<ul>
+  <li>Mutable and contains object references</li>
+</ul>
+
+<p><strong>Methods</strong></p>
+<ul>
+  <li>ArrayList.add(int index, element)</li>
+  <li>ArrayList.addAll(int index, Collection collection)</li>
+  <li>ArrayList.size()</li>
+  <li>ArrayList.clear()</li>
+</ul>
+
+<p><strong>ArrayList Loops</strong></p>
+<ul>
+  <li>For loop</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int sum = 0;
+for (int i = 0; i &lt; roster.size(); i++) {
+    sum = sum + roster.get(i).length();
+}
+System.out.println(sum);
+</code></pre></div></div>
+
+<ul>
+  <li>While loop</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int sum = 0;
+int i = 0;
+while (i &lt; roster.size() ) {
+    sum = sum + roster.get(i).length();
+    i ++
+}
+System.out.println(sum);
+</code></pre></div></div>
+
+<ul>
+  <li>Enhanced for loop</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int sum = 0;
+for(String name: roster) {
+    sum = sum + name.length();
+}
+System.out.println(sum);
+</code></pre></div></div>
+
+<p><strong>Searching</strong></p>
+<ul>
+  <li>The locating of data within linear structures</li>
+  <li>Involves control structures</li>
+</ul>
+
+<p><strong>Sorting</strong></p>
+<ul>
+  <li>Sorts the ArrayList in a specified order</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Collections.sort({list name}); // ascending order
+Collections.sort(ArrayList, Collections.reverseOrder()); // descending order
+</code></pre></div></div>
+
   </div><a class="u-url" href="/csa-fastpages/_pages/notes.html" hidden></a>
 </article>
 
@@ -368,7 +435,21 @@ System.out.println(total);
       </div>
     </div>
 
-    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/csa-fastpages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/csa-fastpages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/exampleUser" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/csa-fastpages/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/exampleUser" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/csa-fastpages/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
 </div>
 
   </div>
