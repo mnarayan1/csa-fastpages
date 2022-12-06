@@ -253,3 +253,32 @@ System.out.println(sum);
 Collections.sort({list name}); // ascending order
 Collections.sort(ArrayList, Collections.reverseOrder()); // descending order
 ```
+
+# Unit 8: 2D Arrays
+
+**Creating a 2D Array**
+
+```
+int[][] numbers = {{1, 2}, {3, 4}};
+```
+
+**Iteration**
+- Use a for loop. First iterate through the rows, then iterate over the columns
+
+```
+for(int i = 0; i< array.length; i++) {
+    for(int j = 0; j < array[i].length; j++) {
+        // code here
+    }
+}
+```
+
+- Printing backwards: 
+
+```
+for(int i = array.length-1; i>=0; i--) {
+    for(int j = array[i].length-1; j>= 0; j--) {
+        // code here
+    }
+}
+```
