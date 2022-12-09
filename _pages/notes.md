@@ -250,7 +250,7 @@ System.out.println(sum);
 - Sorts the ArrayList in a specified order
 
 ```
-Collections.sort({list name}); // ascending order
+Collections.sort(list name); // ascending order
 Collections.sort(ArrayList, Collections.reverseOrder()); // descending order
 ```
 
