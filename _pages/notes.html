@@ -105,6 +105,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#unit-5-writing-classes">Unit 5: Writing Classes</a></li>
 <li class="toc-entry toc-h1"><a href="#unit-6-array">Unit 6: Array</a></li>
 <li class="toc-entry toc-h1"><a href="#unit-7-arraylist">Unit 7: ArrayList</a></li>
+<li class="toc-entry toc-h1"><a href="#unit-8-2d-arrays">Unit 8: 2D Arrays</a></li>
 </ul><h1 id="notes">
 <a class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h1>
 
@@ -407,8 +408,39 @@ System.out.println(sum);
   <li>Sorts the ArrayList in a specified order</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Collections.sort({list name}); // ascending order
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Collections.sort(list name); // ascending order
 Collections.sort(ArrayList, Collections.reverseOrder()); // descending order
+</code></pre></div></div>
+
+<h1 id="unit-8-2d-arrays">
+<a class="anchor" href="#unit-8-2d-arrays" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 8: 2D Arrays</h1>
+
+<p><strong>Creating a 2D Array</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int[][] numbers = // initialize array here;
+</code></pre></div></div>
+
+<p><strong>Iteration</strong></p>
+<ul>
+  <li>Use a for loop. First iterate through the rows, then iterate over the columns</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(int i = 0; i&lt; array.length; i++) {
+    for(int j = 0; j &lt; array[i].length; j++) {
+        // code here
+    }
+}
+</code></pre></div></div>
+
+<ul>
+  <li>Printing backwards:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(int i = array.length-1; i&gt;=0; i--) {
+    for(int j = array[i].length-1; j&gt;= 0; j--) {
+        // code here
+    }
+}
 </code></pre></div></div>
 
   </div><a class="u-url" href="/csa-fastpages/_pages/notes.html" hidden></a>
