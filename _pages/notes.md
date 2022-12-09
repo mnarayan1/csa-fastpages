@@ -259,7 +259,7 @@ Collections.sort(ArrayList, Collections.reverseOrder()); // descending order
 **Creating a 2D Array**
 
 ```
-int[][] numbers = {{1, 2}, {3, 4}};
+int[][] numbers = // initialize array here;
 ```
 
 **Iteration**
