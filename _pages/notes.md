@@ -282,3 +282,31 @@ for(int i = array.length-1; i>=0; i--) {
     }
 }
 ```
+
+# Unit 9: Inheritance
+
+- A superclass can be extended by subclasses, to reduce risk of error, redundacy, and increases simplicity
+
+```
+public class Car {
+    // code here
+}
+
+public class Lambo extends Car {
+    // code here
+}
+```
+
+- Writing constructors for subclasses: the keyword "super" is used to call the superclass constructor, but you can also add additional attributes
+
+```
+public class Lambo extends Car {
+    public Lambo(String license, int price) {
+        super(wheels, color);
+    }
+}
+```
+
+- @Override is used to give different impelementations to the superclass method
+    - Override a method of the superclass
+    - Make your code readable to others
