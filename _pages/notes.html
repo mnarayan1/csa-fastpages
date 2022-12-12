@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -106,6 +106,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#unit-6-array">Unit 6: Array</a></li>
 <li class="toc-entry toc-h1"><a href="#unit-7-arraylist">Unit 7: ArrayList</a></li>
 <li class="toc-entry toc-h1"><a href="#unit-8-2d-arrays">Unit 8: 2D Arrays</a></li>
+<li class="toc-entry toc-h1"><a href="#unit-9-inheritance">Unit 9: Inheritance</a></li>
 </ul><h1 id="notes">
 <a class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h1>
 
@@ -442,6 +443,42 @@ Collections.sort(ArrayList, Collections.reverseOrder()); // descending order
     }
 }
 </code></pre></div></div>
+
+<h1 id="unit-9-inheritance">
+<a class="anchor" href="#unit-9-inheritance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 9: Inheritance</h1>
+
+<ul>
+  <li>A superclass can be extended by subclasses, to reduce risk of error, redundacy, and increases simplicity</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class Car {
+    // code here
+}
+
+public class Lambo extends Car {
+    // code here
+}
+</code></pre></div></div>
+
+<ul>
+  <li>Writing constructors for subclasses: the keyword “super” is used to call the superclass constructor, but you can also add additional attributes</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class Lambo extends Car {
+    public Lambo(String license, int price) {
+        super(wheels, color);
+    }
+}
+</code></pre></div></div>
+
+<ul>
+  <li>@Override is used to give different impelementations to the superclass method
+    <ul>
+      <li>Override a method of the superclass</li>
+      <li>Make your code readable to others</li>
+    </ul>
+  </li>
+</ul>
 
   </div><a class="u-url" href="/csa-fastpages/_pages/notes.html" hidden></a>
 </article>
