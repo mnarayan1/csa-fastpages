@@ -107,6 +107,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#unit-7-arraylist">Unit 7: ArrayList</a></li>
 <li class="toc-entry toc-h1"><a href="#unit-8-2d-arrays">Unit 8: 2D Arrays</a></li>
 <li class="toc-entry toc-h1"><a href="#unit-9-inheritance">Unit 9: Inheritance</a></li>
+<li class="toc-entry toc-h1"><a href="#unit-10-recursion">unit 10: Recursion</a></li>
 </ul><h1 id="notes">
 <a class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h1>
 
@@ -478,6 +479,57 @@ public class Lambo extends Car {
       <li>Make your code readable to others</li>
     </ul>
   </li>
+</ul>
+
+<h1 id="unit-10-recursion">
+<a class="anchor" href="#unit-10-recursion" aria-hidden="true"><span class="octicon octicon-link"></span></a>unit 10: Recursion</h1>
+
+<ul>
+  <li>A recursive method calls itself</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public static void example(int n) {
+    if (n&gt;0) {
+        example(n-1);
+    }
+}
+</code></pre></div></div>
+
+<ul>
+  <li>Recursion can also be seen with String objects, such as iterating over substrings</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public static void mystery (String s) {
+    if(s.length() &gt; 1) {
+        mystery(s.substring(2));
+        System.out.println(s.substring(0,1));
+    }
+}
+</code></pre></div></div>
+
+<ul>
+  <li>Binary Search: more efficient than linear search</li>
+</ul>
+
+<p>1) find middle number of each half of list
+2) We choose each half of the list based on if it is greater or less than target value</p>
+
+<ul>
+  <li>Merge Sort: divides array into halves, the calls itself for the two halves to sort them</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mergeSort(myArray, low, high) {
+    if(low &lt; high) {
+        middle = (low+high) /2;
+        mergeSort(myArray, low, middle);
+        mergeSort(myArray, middle+1, high);
+        merge(myArray, low, middle high);
+    }
+}
+</code></pre></div></div>
+
+<ul>
+  <li>Can use a recursion tree to display recursive algorithm</li>
 </ul>
 
   </div><a class="u-url" href="/csa-fastpages/_pages/notes.html" hidden></a>
