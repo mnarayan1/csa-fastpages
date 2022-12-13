@@ -310,3 +310,46 @@ public class Lambo extends Car {
 - @Override is used to give different impelementations to the superclass method
     - Override a method of the superclass
     - Make your code readable to others
+
+# unit 10: Recursion
+
+- A recursive method calls itself
+
+```
+public static void example(int n) {
+    if (n>0) {
+        example(n-1);
+    }
+}
+```
+
+- Recursion can also be seen with String objects, such as iterating over substrings
+
+```
+public static void mystery (String s) {
+    if(s.length() > 1) {
+        mystery(s.substring(2));
+        System.out.println(s.substring(0,1));
+    }
+}
+```
+
+- Binary Search: more efficient than linear search
+
+1) find middle number of each half of list
+2) We choose each half of the list based on if it is greater or less than target value
+
+- Merge Sort: divides array into halves, the calls itself for the two halves to sort them
+
+```
+mergeSort(myArray, low, high) {
+    if(low < high) {
+        middle = (low+high) /2;
+        mergeSort(myArray, low, middle);
+        mergeSort(myArray, middle+1, high);
+        merge(myArray, low, middle high);
+    }
+}
+```
+
+- Can use a recursion tree to display recursive algorithm
