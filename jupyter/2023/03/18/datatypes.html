@@ -79,7 +79,7 @@ window.onload = wrap_img;
       • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -160,9 +160,11 @@ window.onload = wrap_img;
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="c1">// count number of words in queue</span>
         <span class="kt">int</span> <span class="n">wordCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
         <span class="c1">// Enqueue data</span>
+        <span class="c1">// .add adds each word to the end of the queue</span>
         <span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"seven"</span><span class="p">);</span>
         <span class="n">wordCount</span><span class="o">++</span><span class="p">;</span>
         <span class="n">printQueue</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">wordCount</span><span class="p">);</span>
@@ -192,6 +194,7 @@ window.onload = wrap_img;
         <span class="n">printQueue</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">wordCount</span><span class="p">);</span>
 
         <span class="c1">// Dequeue data</span>
+        <span class="c1">// queue.remove() removes the first element from the queue</span>
         <span class="n">String</span> <span class="n">data</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
         <span class="n">wordCount</span><span class="o">--</span><span class="p">;</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dequeued data: "</span> <span class="o">+</span> <span class="n">data</span><span class="p">);</span>
@@ -231,10 +234,10 @@ window.onload = wrap_img;
     <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">printQueue</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">,</span> <span class="kt">int</span> <span class="n">wordCount</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Print the queue</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Words count: "</span> <span class="o">+</span> <span class="n">wordCount</span> <span class="o">+</span> <span class="s">", data: "</span><span class="p">);</span>
+        <span class="c1">// iterating over a queue is similar to iterating over a list</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">element</span> <span class="p">:</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">element</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
@@ -251,28 +254,14 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Words count: 1, data: seven 
-Words count: 2, data: seven slimy 
-Words count: 3, data: seven slimy snakes 
-Words count: 4, data: seven slimy snakes sallying 
-Words count: 5, data: seven slimy snakes sallying slowly 
-Words count: 6, data: seven slimy snakes sallying slowly slithered 
-Words count: 7, data: seven slimy snakes sallying slowly slithered southward 
-Dequeued data: seven
-Words count: 6, data: slimy snakes sallying slowly slithered southward 
-Dequeued data: slimy
-Words count: 5, data: snakes sallying slowly slithered southward 
-Dequeued data: snakes
-Words count: 4, data: sallying slowly slithered southward 
-Dequeued data: sallying
-Words count: 3, data: slowly slithered southward 
-Dequeued data: slowly
-Words count: 2, data: slithered southward 
-Dequeued data: slithered
-Words count: 1, data: southward 
-Dequeued data: southward
-Words count: 0, data: 
-</pre>
+<pre>Words count: 1, data: seven Words count: 2, data: seven slimy Words count: 3, data: seven slimy snakes Words count: 4, data: seven slimy snakes sallying Words count: 5, data: seven slimy snakes sallying slowly Words count: 6, data: seven slimy snakes sallying slowly slithered Words count: 7, data: seven slimy snakes sallying slowly slithered southward Dequeued data: seven
+Words count: 6, data: slimy snakes sallying slowly slithered southward Dequeued data: slimy
+Words count: 5, data: snakes sallying slowly slithered southward Dequeued data: snakes
+Words count: 4, data: sallying slowly slithered southward Dequeued data: sallying
+Words count: 3, data: slowly slithered southward Dequeued data: slowly
+Words count: 2, data: slithered southward Dequeued data: slithered
+Words count: 1, data: southward Dequeued data: southward
+Words count: 0, data: </pre>
 </div>
 </div>
 
@@ -303,6 +292,7 @@ Words count: 0, data:
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MergeQueues</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// start off with two separate queues, and use .add to add integers to each queue</span>
         <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
         <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
         <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
@@ -320,13 +310,16 @@ Words count: 0, data:
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">mergeQueues</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue1</span><span class="p">,</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// mergedQueue is the final sorted queue</span>
         <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">mergedQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
         <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">queue1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">queue2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="c1">// .peek looks at the first value in each queue</span>
             <span class="kt">int</span> <span class="n">head1</span> <span class="o">=</span> <span class="n">queue1</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
             <span class="kt">int</span> <span class="n">head2</span> <span class="o">=</span> <span class="n">queue2</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
 
             <span class="k">if</span> <span class="p">(</span><span class="n">head1</span> <span class="o">&lt;</span> <span class="n">head2</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// the smaller integer is added to the merged queue, and is removed from the original queue</span>
                 <span class="n">mergedQueue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">head1</span><span class="p">);</span>
                 <span class="n">queue1</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -409,9 +402,8 @@ Words count: 0, data:
         <span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
 
         <span class="c1">// Shuffle the Queue by iterating through each element and swapping with a random position</span>
-        <span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">queue</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">int</span> <span class="n">randomIndex</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+            <span class="kt">int</span> <span class="n">randomIndex</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="o">*</span><span class="mi">10</span><span class="p">;</span>
             <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span> <span class="c1">// Get the element at the head of the queue</span>
             <span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span> <span class="c1">// Remove the element from the head of the queue</span>
             <span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span> <span class="c1">// Add the element back to the queue</span>
@@ -489,6 +481,7 @@ Words count: 0, data:
         <span class="c1">// print the elements of the Stack</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Stack elements: "</span><span class="p">);</span>
         <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="c1">// .pop takes the last element of the stack</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">()</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
