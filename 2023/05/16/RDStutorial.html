@@ -79,7 +79,7 @@ window.onload = wrap_img;
       • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      4 min read
     
 </span></p>
 
@@ -145,45 +145,54 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Creating-the-RDS-Database-Instance">Creating the RDS Database Instance<a class="anchor-link" href="#Creating-the-RDS-Database-Instance"> </a></h1><p>Instructions here</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In <code>pom.xml</code>, add the following dependencies:</p>
-
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;org.postgresql&lt;/groupId&gt;
-    &lt;artifactId&gt;postgresql&lt;/artifactId&gt;
-    &lt;scope&gt;runtime&lt;/scope&gt;
-&lt;/dependency&gt;</code></pre>
-<p>In <code>application.properties</code>, add the following configurations:</p>
-
-<pre><code>spring.datasource.url=jdbc:postgresql://&lt;database-endpoint-url&gt;:&lt;port&gt;/&lt;database&gt; 
-spring.datasource.username=YOUR_USERNAME
-spring.datasource.password=YOUR_PASSWORD
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.hibernate.show-sql=true</code></pre>
-<p>Now, the spring application is connected to the RDS database in the cloud.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Using-the-Database">Using the Database<a class="anchor-link" href="#Using-the-Database"> </a></h1><p>After setting up the RDS database, you should be able to work with spring as usual.</p>
-<p><a href="https://nirajsonawane.github.io/2022/04/18/Spring-Boot-AWS-RDS/">https://nirajsonawane.github.io/2022/04/18/Spring-Boot-AWS-RDS/</a></p>
+<h1 id="Step-1:-Create-an-EC2-Instance">Step 1: Create an EC2 Instance<a class="anchor-link" href="#Step-1:-Create-an-EC2-Instance"> </a></h1><p>Create an Amazon EC2 instance that you will use to connect to your database.</p>
+<p><em>To create an EC2 instance</em></p>
+<ol>
+<li>Sign in to the AWS Management Console and open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</li>
+<li>In the upper-right corner of the AWS Management Console, choose the AWS Region in which you want to create the EC2 instance.</li>
+<li>Choose EC2 Dashboard, and then choose Launch instance, as shown in the following image (The Launch an instance page opens)</li>
+<li><p>Choose the following settings on the Launch an instance page.</p>
+<ul>
+<li>Under Name and tags, for Name, enter ec2-database-connect.</li>
+<li>Under Application and OS Images (Amazon Machine Image), choose Amazon Linux, and then choose the Amazon Linux 2023 AMI. Keep the default selections for the other choices.)</li>
+<li>Under Instance type, choose t2.micro.</li>
+<li>Under Key pair (login), choose a Key pair name to use an existing key pair. To create a new key pair for the Amazon EC2 instance, choose <em>Create new key pair</em> and then use the <em>Create key pair</em> window to create it.</li>
+<li><p>For Allow SSH traffic in Network settings, choose the source of SSH connections to the EC2 instance.</p>
+<ul>
+<li>Note: You can choose My IP if the displayed IP address is correct for SSH connections. Otherwise, you can determine the IP address to use to connect to EC2 instances in your VPC using Secure Shell (SSH). To determine your public IP address, in a different browser window or tab, you can use the service at <a href="https://checkip.amazonaws.com">https://checkip.amazonaws.com</a>. An example of an IP address is 192.0.2.1/32.</li>
+<li>In many cases, you might connect through an internet service provider (ISP) or from behind your firewall without a static IP address. If so, make sure to determine the range of IP addresses used by client computers.</li>
+</ul>
+<ul>
+<li><p><em>WARNING</em>: If you use 0.0.0.0/0 for SSH access, you make it possible for all IP addresses to access your public EC2 instances using SSH. This approach is acceptable for a short time in a test environment, but it's unsafe for production environments. In production, authorize only a specific IP address or range of addresses to access your EC2 instances using SSH.</p>
+</li>
+<li><p>Example for Network Settings Section:
+insert image here</p>
+</li>
+<li><p>Leave the default values for the remaining sections.</p>
+</li>
+<li>Review a summary of your EC2 instance configuration in the <em>Summary</em> panel, and when you're ready, choose <em>Launch instance</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>On the Launch Status page, note the identifier for your new EC2 instance, for example: i-1234567890abcdef0.
+insert image here</p>
+</li>
+<li><p>Choose the EC2 instance identifier to open the list of EC2 instances, and then select your EC2 instance.</p>
+</li>
+<li><p>In the <em>Details</em> tab, note the following values, which you need when you connect using SSH:</p>
+<ul>
+<li><p>In <em>Instance summary</em>, note the value for <em>Public IPv4 DNS</em>.
+insert image here</p>
+</li>
+<li><p>In <em>Instance details</em>, note the value for <em>Key pair name</em>.
+insert image here</p>
+</li>
+</ul>
+</li>
+<li><p>Wait until the Instance state for your EC2 instance has a status of <em>Running</em> before continuing.</p>
+</li>
+</ol>
 
 </div>
 </div>
